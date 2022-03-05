@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,4 +13,16 @@ class PostController extends Controller
     {
         return view('index')->with(['posts' => $post-> getPaginateByLimit()]); 
     }
+
+    public function show(Post $post)
+    {
+        return view('show')->with(['post' => $post]);
+    }
 }
+
+/**
+ * 特定IDのpostを表示する
+ *
+ * @params Object Post // 引数の$postはid=1のPostインスタンス
+ * @return Reposnse post view
+ */
