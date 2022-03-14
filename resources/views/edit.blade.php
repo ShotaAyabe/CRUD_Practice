@@ -26,5 +26,3 @@
         <div class="back">[<a href="/posts/{{ $post->id }}">back</a>]</div>
     </body>
 </html>
-
-//バリデーション設定は新たに編集が必要。入力内容の保持など(old)
